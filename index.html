@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreshMart - Beranda</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">SihiteMart</div>
+    <ul class="nav-links">
+        <li><a class="active" href="index.html">Beranda</a></li>
+        <li><a href="produk.html">Produk</a></li>
+        <li><a href="tentang.html">Tentang</a></li>
+        <li><a href="kontak.html">Kontak</a></li>
+    </ul>
+</nav>
+
+<header class="header">
+    <h1 class="animate-title">Selamat Datang di SihiteMart</h1>
+    <p class="animate-subtitle">Toko kebutuhan harian lengkap, segar, dan murah!</p>
+</header>
+
+<div class="container fade-scroll">
+    <p style="text-align:center; margin-top:20px; font-size:18px;">
+        SihiteMart menyediakan berbagai kebutuhan harian dengan harga terbaik, produk berkualitas, dan layanan cepat.
+    </p>
+</div>
+
+<section class="fade-scroll">
+    <h2 style="text-align: center; margin: 40px 0 20px;">🔥 Produk Pilihan Kami 🔥</h2>
+    <div class="product-container">
+        
+        <div class="product-card">
+            <img src="images/beras.png" alt="Beras Premium">
+            <h3 class="product-title">Beras Premium 5 Kg</h3>
+            <p class="price">Rp 65.000</p>
+            <button class="btn-buy">Beli Sekarang</button>
+        </div>
+
+        <div class="product-card">
+            <img src="images/minyak.png" alt="Minyak Goreng">
+            <h3 class="product-title">Minyak Goreng 1 Liter</h3>
+            <p class="price">Rp 20.000</p>
+            <button class="btn-buy">Beli Sekarang</button>
+        </div>
+
+        <div class="product-card">
+            <img src="images/susu.png
+            " alt="Susu UHT">
+            <h3 class="product-title">Susu UHT 1 Liter</h3>
+            <p class="price">Rp 18.000</p>
+            <button class="btn-buy">Beli Sekarang</button>
+        </div>
+
+        <div class="product-card">
+            <img src="images/roti.png" alt="Roti Tawar">
+            <h3 class="product-title">Roti Tawar 600gr</h3>
+            <p class="price">Rp 12.000</p>
+            <button class="btn-buy">Beli Sekarang</button>
+        </div>
+
+    </div>
+</section>
+<footer class="footer">
+    <p>&copy 2025 SihiteMart. Semua Hak Cipta Dilindung!</p>
+</footer>
+
+<script>
+    const faders = document.querySelectorAll('.fade-scroll');
+
+    const appearOnScroll = () => {
+        faders.forEach(el => {
+            const top = el.getBoundingClientRect().top;
+            const screenHeight = window.innerHeight;
+            
+            // Pemicu: Elemen akan muncul jika sudah terlihat hampir penuh (50px dari batas bawah layar).
+            if (top < screenHeight - 50) { 
+                el.classList.add('show');
+            } 
+            // Opsional: Hapus baris di bawah ini jika Anda ingin elemen tetap terlihat saat di-scroll ke atas
+            else {
+                el.classList.remove('show');
+            }
+        });
+    };
+
+    // Panggil fungsi sekali saat halaman dimuat dan saat scroll
+    appearOnScroll(); 
+    window.addEventListener('scroll', appearOnScroll);
+</script>
+
+</body>
+</html>
